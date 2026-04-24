@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Softqu.API/Softqu.API.csproj" />
+  <Project Path="Softqu.Application/Softqu.Application.csproj" Id="555f5508-075a-4b17-b388-53582954805b" />
+  <Project Path="Softqu.Domain/Softqu.Domain.csproj" Id="c4dfddd3-aa86-42ec-b0b7-c22e50a53264" />
+  <Project Path="Softqu.Infrastucture/Softqu.Infrastucture.csproj" Id="b9f8a018-6e9e-4aed-8a29-09797439b2ce" />
+</Solution>
