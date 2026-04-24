@@ -39,8 +39,10 @@ The project integrates **Scalar**, a modern and interactive alternative to Swagg
 * **Interactive API Console:** Test all endpoints directly from the browser.
 * **Multiple Language Client Code:** Automatically generates code snippets for your API in various languages (JavaScript, Python, C#, etc.).
 * **Access:** Once the project is running, you can access the documentation at:
-  `https://localhost:{port}/scalar/v1`
-  <img width="1881" height="792" alt="image" src="https://github.com/user-attachments/assets/65a43972-e0d1-419f-b49d-5c7f844d5da2" />
+  `https://localhost:{port}/docs/`
+
+
+<img width="1871" height="785" alt="image" src="https://github.com/user-attachments/assets/a15eec30-7106-4bd1-96ba-cac4d480ed45" />
 
 
 ## ⚙️ Setup
