@@ -6,7 +6,7 @@ This repository contains a robust implementation of a hierarchical category mana
 * **Softqu.Domain**: Entities, Value Objects, and Domain Interfaces.
 * **Softqu.Application**: CQRS Handlers, DTOs, and Business Logic.
 * **Softqu.Infrastructure**: Data Persistence (EF Core), Configurations, and Caching.
-* **Softqu.Api**: Controllers and API Configuration (Scalar).
+* **Softqu.API**: Controllers and API Configuration (Scalar).
 
 ## 🏗 Architecture & Patterns
 The project is built following **Clean Architecture** principles to ensure separation of concerns, testability, and maintainability:
