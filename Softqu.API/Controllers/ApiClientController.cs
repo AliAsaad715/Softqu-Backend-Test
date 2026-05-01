@@ -26,12 +26,18 @@ namespace Softqu.API.Controllers
                 success => Ok(new { message = "Operation successful." }),
 
                 // 400 Bad Request (Validation)
-                validationFailed => BadRequest(new
+                validationFailed =>
                 {
-                    type = "ValidationFailure",
-                    title = "Validation Error",
-                    errors = validationFailed.Errors.Select(e => new { Field = e.PropertyName, Message = e.ErrorMessage })
-                }),
+                    var problemDetails = new ValidationProblemDetails(
+                        validationFailed.Errors.ToDictionary(e => e.PropertyName, e => new[] { e.ErrorMessage })
+                    )
+                    {
+                        Type = "ValidationFailure",
+                        Title = "Validation Error",
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                    return BadRequest(problemDetails);
+                },
 
                 // 404 Not Found
                 NotFound => StatusCode(StatusCodes.Status404NotFound, new
@@ -66,12 +72,18 @@ namespace Softqu.API.Controllers
                 data => Ok(data),
 
                 // 400 Bad Request (Validation)
-                validationFailed => BadRequest(new
+                validationFailed =>
                 {
-                    type = "ValidationFailure",
-                    title = "Validation Error",
-                    errors = validationFailed.Errors.Select(e => new { Field = e.PropertyName, Message = e.ErrorMessage })
-                }),
+                    var problemDetails = new ValidationProblemDetails(
+                        validationFailed.Errors.ToDictionary(e => e.PropertyName, e => new[] { e.ErrorMessage })
+                    )
+                    {
+                        Type = "ValidationFailure",
+                        Title = "Validation Error",
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                    return BadRequest(problemDetails);
+                },
 
                 // 404 Not Found
                 NotFound => StatusCode(StatusCodes.Status404NotFound, new

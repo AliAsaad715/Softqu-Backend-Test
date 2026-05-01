@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Softqu.Domain.SwiperSlide;
+using Softqu.Domain.SwiperSlide.Entities;
 
 namespace Softqu.Infrastructure.Configurations
 {
@@ -26,7 +27,11 @@ namespace Softqu.Infrastructure.Configurations
                 t.ToTable("SwiperSlideTranslations");
                 t.HasKey(tr => tr.Id);
                 t.WithOwner().HasForeignKey("SwiperSlideId");
-                t.Property(tr => tr.LanguageCode).IsRequired();
+
+                t.Property<Guid>("SwiperSlideId");
+                t.HasIndex("SwiperSlideId", nameof(SwiperSlideTranslation.LanguageCode)).IsUnique();
+
+                t.Property(tr => tr.LanguageCode).HasMaxLength(10).IsRequired();
 
                 t.OwnsOne(tr => tr.Texts, tt =>
                 {

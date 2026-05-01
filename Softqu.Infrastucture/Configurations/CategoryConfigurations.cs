@@ -32,6 +32,7 @@ namespace Softqu.Infrastructure.Configurations
             builder.ToTable("CategoryTranslations");
             builder.HasKey(tr => tr.Id);
             builder.Property(tr => tr.Id).ValueGeneratedNever();
+            builder.HasIndex("CategoryId", nameof(CategoryTranslation.LanguageCode)).IsUnique();
             builder.Property(tr => tr.Title).IsRequired().HasMaxLength(200);
             builder.Property(tr => tr.LanguageCode).IsRequired().HasMaxLength(10);
             builder.Property<Guid>("CategoryId").IsRequired();
